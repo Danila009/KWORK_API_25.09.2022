@@ -32,11 +32,11 @@ namespace FilmsApi
         public void ConfigureServices(IServiceCollection services)
         {
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
-            builder.Server = "cfif31.ru";
+            builder.Server = "isp2.phox-it.ru";
             builder.Port = 3306;
-            builder.UserID = "ISPr24-39_BeluakovDS";
-            builder.Password = "ISPr24-39_BeluakovDS";
-            builder.Database = "ISPr24-39_BeluakovDS_FilmsKworkDatabase";
+            builder.UserID = "filmsvvvzzz";
+            builder.Password = "dH8cI8mB8j";
+            builder.Database = "filmsvvvzzz";
             builder.CharacterSet = "utf8";
 
             services.AddDbContext<EfModel>(

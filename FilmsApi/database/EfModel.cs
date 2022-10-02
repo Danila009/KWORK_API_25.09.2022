@@ -1,4 +1,5 @@
-﻿using FilmsApi.Model.Advertising;
+﻿using FilmsApi.Model;
+using FilmsApi.Model.Advertising;
 using FilmsApi.Model.User;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -24,5 +25,6 @@ namespace FastestDeliveryApi.database
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<AdminUser> AdminUsers { get; set; }
         public virtual DbSet<Advertising> Advertisings { get; set; }
+        public virtual DbSet<Freekassa> Freekassas { get; set; }
     }
 }

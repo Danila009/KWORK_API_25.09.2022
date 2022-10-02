@@ -2,7 +2,7 @@
 
 namespace FilmsApi.Model.User
 {
-    [Table("AdminUser")]
+    [Table("AdminUsers")]
     public class AdminUser : User
     {
         public override string Role => "ADMIN_USER";

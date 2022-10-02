@@ -48,18 +48,20 @@ namespace FilmsApi.Controllers
 
         [Authorize(Roles = "ADMIN_USER")]
         [HttpPost]
-        public async Task<ActionResult> PostAdvertising(
+        public async Task<ActionResult<Advertising>> PostAdvertising(
             CreateAdvertisingDTO advertisingDTO
             )
         {
-            _efModel.Advertisings.Add(new Advertising
+            Advertising advertising = new Advertising
             {
                 Title = advertisingDTO.Title,
                 WebUrl = advertisingDTO.WebUrl
-            });
+            };
+
+            _efModel.Advertisings.Add(advertising);
             await _efModel.SaveChangesAsync();
 
-            return Ok();
+            return CreatedAtAction(nameof(GetAdvertising), new { id = advertising.Id }, advertising);
         }
 
         [Authorize(Roles = "ADMIN_USER")]
