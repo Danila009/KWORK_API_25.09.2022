@@ -26,5 +26,6 @@ namespace FastestDeliveryApi.database
         public virtual DbSet<AdminUser> AdminUsers { get; set; }
         public virtual DbSet<Advertising> Advertisings { get; set; }
         public virtual DbSet<Freekassa> Freekassas { get; set; }
+        public virtual DbSet<Subscription> Subscriptions { get; set; }
     }
 }

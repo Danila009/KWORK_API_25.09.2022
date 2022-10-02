@@ -102,6 +102,7 @@ namespace FilmsApi.Controllers
             return await _efModel.AdminUsers.ToListAsync();
         }
 
+        [Authorize(Roles = "ADMIN_USER")]
         [HttpGet("/api/Users")]
         public async Task<ActionResult<List<User>>> GetUsers()
         {
