@@ -1,0 +1,4 @@
+C:\Users\danbe\source\repos\FilmsApi\FilmsApi\obj\Release\net5.0\linux-x64\PubTmp\Out\appsettings.Development.json
+C:\Users\danbe\source\repos\FilmsApi\FilmsApi\obj\Release\net5.0\linux-x64\PubTmp\Out\appsettings.json
+C:\Users\danbe\source\repos\FilmsApi\FilmsApi\obj\Release\net5.0\linux-x64\PubTmp\Out\FilmsApi.pdb
+C:\Users\danbe\source\repos\FilmsApi\FilmsApi\obj\Release\net5.0\linux-x64\PubTmp\Out\FilmsApi

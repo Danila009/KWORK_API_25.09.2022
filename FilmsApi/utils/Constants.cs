@@ -2,7 +2,7 @@
 {
     public class Constants
     {
-        public const string BASE_URL = "http://10.0.2.2:5000";
+        public const string BASE_URL = "https://24filmfond.ru/filmsvvvzzz";
 
         public const string IMAGE_PATCH = "images";
     }

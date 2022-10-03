@@ -39,6 +39,10 @@ namespace FilmsApi
             builder.Database = "filmsvvvzzz";
             builder.CharacterSet = "utf8";
 
+            services.AddControllers();
+
+            services.AddCors();
+
             services.AddDbContext<EfModel>(
                 o => o.UseMySql(
                     builder.ConnectionString,
@@ -97,12 +101,29 @@ namespace FilmsApi
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
+            var basePath = "filmsvvvzzz";
+            app.UsePathBase("/" + basePath);
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "FilmsApi v1"));
+
+                app.UseSwagger(c =>
+                {
+                    c.RouteTemplate = "swagger/{documentName}/swagger.json";
+                    c.PreSerializeFilters.Add((swaggerDoc, httpReq) =>
+                    {
+                        swaggerDoc.Servers = new List<OpenApiServer> { new OpenApiServer { Url = $"https://{httpReq.Host.Value}/{basePath}" } };
+                    });
+                });
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint($"/filmsvvvzzz/swagger/v1/swagger.json", "FilmsApi v1");
+                });
             }
+
+
+            app.UseCors(
+               options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()
+            );
 
             app.UseRouting();
 
@@ -114,6 +135,7 @@ namespace FilmsApi
             {
                 endpoints.MapControllers();
             });
+
         }
     }
 }
